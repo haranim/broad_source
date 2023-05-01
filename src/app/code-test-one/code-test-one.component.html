@@ -1,0 +1,22 @@
+<br/>
+<div class="main-content">
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter First value</mat-label>
+            <input  matInput  (keyup)="search(getValue($event))" >
+          </mat-form-field>    
+      </p>
+    
+
+      <br/>
+     
+        <ul *ngIf="searchResult$ | async as searchResult else noData">
+          <li *ngFor="let item of searchResult">{{item.show.name}}</li>
+        </ul>
+  
+      <ng-template #noData>No Data Available</ng-template>
+</div>
+
+
+
+  
